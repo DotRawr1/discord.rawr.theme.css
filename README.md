@@ -1,5 +1,5 @@
 # discord.rawr.theme.css
-all the themes and css i use smushed together
+all the themes and css i use smushed together for use with [Vencord](https://github.com/Vendicated/Vencord)
 
 ## CREDITS
 [Discord Recolor](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/DiscordRecolor) by [DevilBro](https://github.com/mwittrien)<br />
