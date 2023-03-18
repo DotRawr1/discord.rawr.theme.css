@@ -1,7 +1,7 @@
-@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css");
 @import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
-@import url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css);
+@import url("https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css");
 :root {
 	/* Discord Recolor */
 	--font:						Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
