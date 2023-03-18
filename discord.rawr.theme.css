@@ -1,0 +1,172 @@
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css);
+@import url("https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css");
+@import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
+@import url(https://cdn.jsdelivr.net/gh/Overimagine1/old-discord-font/source.min.css);
+:root {
+	/* Discord Recolor */
+	--font:						Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	--settingsicons:			1;						/*	Use Custom Icons: 1 = yes, 0 = no */
+	
+	--accentcolor: 				114,137,218;			/*	Blurple - 88,101,242 */
+	--accentcolor2: 			255,115,250;			/*	Boostpink  - 255,115,250 */
+	--linkcolor: 				0,176,244;				/*	Link Color - 0,176,244 */
+	--mentioncolor: 			250,166,26;				/*	Highlight Color - 250,166,26 */
+	--successcolor: 			59,165,92;				/*	Success Color - 59,165,92 */
+	--warningcolor: 			250,166,26;				/*	Warning Color - 250,166,26 */
+	--dangercolor:  			237,66,69;				/*	Danger Color - 237,66,69 */
+
+	--textbrightest: 			255,255,255;			/*	white - 255,255,255 */
+	--textbrighter: 			222,222,222;			/*	darker white - 220,221,222	*/
+	--textbright: 				185,185,185;			/*	dark white - 185,187,190 */
+	--textdark: 				140,140,140;			/*	bright grey - 142,146,151 */
+	--textdarker: 				115,115,115;			/*	brighter grey - 114,118,125 */
+	--textdarkest: 				80,80,80;				/*	grey - 79,84,92 */
+	
+	--backgroundaccent: 		40,40,40;				/*	darker grey - 64,68,75 */
+	--backgroundprimary: 		30,30,30;				/*	dark grey - 54,57,63 */
+	--backgroundsecondary: 		20,20,20;				/*	darkest grey - 47,49,54 */
+	--backgroundsecondaryalt: 	15,15,15;				/*	grey-black - 41,43,47 */
+	--backgroundtertiary: 		10,10,10;				/*	bright black  - 32,34,37 */
+	--backgroundfloating: 		0,0,0;					/*	brighter black - 24,25,28 */
+	
+	/* Horizontal Serverlist */
+	--HSL-server-icon-size: 40px;  /* Size of the server icons | DEFAULT: 40px */
+	--HSL-server-spacing: 4px;  /* Spacing between each server icon | DEFAULT: 10px */
+	--HSL-server-direction: column; /* Direct of the server list. | Options: column, column-reverse */
+
+	--server-size: var(--HSL-server-icon-size, var(--HSL-size, 35px));
+	--server-spacing: var(--HSL-server-spacing, var(--HSL-spacing, 10px));
+	--server-container: calc(var(--server-size) + 20px);
+	--server-direction: var(--HSL-server-direction, column);
+	--server-alignment: var(--HSL-server-alignment, flex-start)
+}
+/*CSS Snippets~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Remove Gift Button  */
+button[aria-label="Send a gift"] {
+  display: none;
+}
+/*Remove Gif Button  */
+button[aria-label="Open GIF picker"] {
+  display: none;
+}
+/*Remove Sticker Button  */
+button[aria-label="Open sticker picker"] {
+  display: none;
+}
+/*Adjust emoji size
+	2rem - old size; 3rem - new size*/
+.emoji.jumboable { 
+	width: 5rem;
+	height: 5rem;
+	min-height: 5rem
+}
+/* Disable Nitro button in Home tab */
+[href="/store"] {
+    display:none;
+}
+/* Disable Stage Shit button in Home tab */
+#private-channels 
+[href="/discovery"] {
+	display: none
+}
+/*Disable Quick React Emojis*/
+.wrapper-3_530D {
+	display:none;
+}
+/* Disable Active Now panel in Home tab */
+.nowPlayingColumn-2sl4cE {
+    display:none;
+}
+/* Completely Hide Blocked Messages */
+.groupStart-23k01U:not(.message-2qnXI6):not([style]) {
+	display:none;
+}
+.messageGroupBlocked-3wrQQX,[class^="blockedSystemMessage"],
+.messageGroupBlockedBtn-1PBBh- {
+	display: none !important
+}
+/*Remove sticker reccommendations in message bar*/
+.container-JHR0NT {
+    display:none;
+}
+.stickersHeaderWithEmojiResults-1b7pYC {
+	display:none;
+}
+[id="textarea-context-sticker-suggestions"] {
+  display: none;
+}
+[id="autocomplete-6"] {
+  display: none;
+}
+[id="autocomplete-7"] {
+  display: none;
+}
+[id="autocomplete-8"] {
+  display: none;
+}
+[id="autocomplete-9"] {
+  display: none;
+}
+.divider-1bJsnZ {
+	display:none;
+}
+/*Fixes from BD Server~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Remove buttons on message hover */
+.buttonContainer-DHceWr .buttons-cl5qTG {
+	display:none;
+}
+.buttons-3dF5Kd .wrapper-2vIMkT {
+	display:none;
+}
+/* Revert Reactions to ~2020 style*/
+.wrapper-3WhCwL,.mentioned-xhSam7 .mention{
+  color:#7289da !important;
+  background:rgba(114,137,218,.1) !important;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 500;
+}
+.wrapper-3WhCwL:hover,.mentioned-xhSam7 .mention:hover{
+  color:#fff !important;
+  background-color:#7289da !important;
+}
+.reaction-1hd86g,.reaction-1hd86g:hover{
+    background-color:var(--background-modifier-accent);
+    border: none;
+    border-radius:.25rem;
+}
+.reaction-1hd86g.reactionMe-wv5HKu{
+    background-color:rgba(114,137,218,.3);
+}
+[class*="reaction-"] {
+    background:var(--background-modifier-accent);
+    border-radius:.25rem;
+    border:none;
+    margin:0 .125rem .125rem 0;
+    -webkit-transition:background-color .1s ease;
+    transition:background-color .1s ease;
+    padding:0;
+}
+[class*="reaction-"]:hover, [class*="reaction-"]:active {
+    background-color:rgba(252, 245, 255, 0.05);
+}
+[class*="reaction-"][class*="reactionMe-"] {
+    background-color:rgba(114,137,218,.3);
+}
+[class*="reaction-"] [class*="reactionInner-"] {
+    padding:0 .375rem;
+}
+[class*="reaction-"] [class*="reactionCount-"]:not(#foo) {
+    color:var(--text-muted);
+}
+[class*="reaction-"]:hover [class*="reactionCount-"]:not(#foo) {
+    color:var(--interactive-hover);
+}
+[class*="reaction-"][class*="reactionMe-"] [class*="reactionCount-"]:not(#foo),
+[class*="reaction-"][class*="reactionMe-"]:hover [class*="reactionCount-"]:not(#foo) {
+    color:#7289da;
+}
+/*Adjust embed transparency*/
+embedWrapper-1MtIDg {
+    background-color:transparent;
+}
