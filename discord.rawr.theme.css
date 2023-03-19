@@ -170,3 +170,53 @@ button[aria-label="Open sticker picker"] {
 embedWrapper-1MtIDg {
     background-color:transparent;
 }
+
+/*Vencord Things~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Left column reorder */
+.panels-3wFtMD {
+  display: flex;
+  flex-direction: column;
+}
+.listeningAlong-6YvYsc {
+  order: 2;
+}
+.panel-2ZFCRb {
+  order: 1;
+}
+.wrapper-3Hk9OB{
+  order: 4;
+}
+#vc-spotify-player{
+  order: 3;
+}
+.container-YkUktl {
+  order: 5;
+}
+/* Hide various things to save vertical space */
+.panel-2ZFCRb {
+  display: none;
+}
+#vc-spotify-progress-bar {
+  display: none;
+}
+.vc-spotify-button-row {
+  display: none !important;
+}
+/* Hover transition on screenshare panel to save vertical space */ 
+.actionButtons-2vEOUh {
+  height: 0;
+  opacity: 0;
+  transition: height .2s, opacity .02s;
+  padding-top: 0px;
+}
+.connection-3k9QeF, .voiceUsers-3gPcwY {
+  padding-bottom: 0px;
+}
+.wrapper-3Hk9OB:hover .actionButtons-2vEOUh {
+  height: 32px;
+  opacity: 1;
+  padding-top: 4px;
+}
+.wrapper-3Hk9OB:hover .connection-3k9QeF, .voiceUsers-3gPcwY {
+  padding-bottom: 4px;
+}
