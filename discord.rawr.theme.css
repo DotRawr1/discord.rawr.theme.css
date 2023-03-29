@@ -220,3 +220,7 @@ embedWrapper-1MtIDg {
 .wrapper-3Hk9OB:hover .connection-3k9QeF, .voiceUsers-3gPcwY {
   padding-bottom: 4px;
 }
+/*Remove Invite Button next to channel name*/
+.actionIcon-2sw4Sl {
+    display: none;
+}
