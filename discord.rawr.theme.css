@@ -135,7 +135,9 @@ some of this is probably redundant but im lazy*/
 }
 /* Hide various things to save vertical space */
 .panel-2ZFCRb,
-#vc-spotify-progress-bar,
+#vc-spotify-progress-bar {
+  display: none;
+}
 .vc-spotify-button-row {
   display: none !important;
 }
