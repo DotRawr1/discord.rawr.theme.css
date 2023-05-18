@@ -137,7 +137,7 @@ some of this is probably redundant but im lazy*/
 .panel-2ZFCRb,
 #vc-spotify-progress-bar,
 .vc-spotify-button-row {
-  display: none;
+  display: none !important;
 }
 /* Hover transition on screenshare panel to save vertical space */ 
 .actionButtons-2vEOUh {
