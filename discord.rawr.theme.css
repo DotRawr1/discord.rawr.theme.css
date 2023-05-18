@@ -41,6 +41,18 @@
 	--server-alignment: var(--HSL-server-alignment, flex-start)
 }
 /*CSS Snippets~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Adjust emoji size
+	2rem - old size; 3rem - new size*/
+.emoji.jumboable { 
+	width: 5rem;
+	height: 5rem;
+	min-height: 5rem
+}
+/*Adjust reaction size*/
+[id*=message-reactions] [class*=reaction-] .emoji,
+[class*=effect-] {
+  zoom: 150%;
+}
 /*Remove Gift Button  */
 button[aria-label="Send a gift"] {
   display: none;
@@ -53,37 +65,52 @@ button[aria-label="Open GIF picker"] {
 button[aria-label="Open sticker picker"] {
   display: none;
 }
-/*Adjust emoji size
-	2rem - old size; 3rem - new size*/
-.emoji.jumboable { 
-	width: 5rem;
-	height: 5rem;
-	min-height: 5rem
-}
 /* Disable Nitro button in Home tab */
 [href="/store"] {
     display:none;
 }
-/* Disable Stage Shit button in Home tab */
+/* Disable Stage button in Home tab */
 #private-channels 
 [href="/discovery"] {
 	display: none
-}
-/*Disable Quick React Emojis*/
-.wrapper-3_530D {
-	display:none;
 }
 /* Disable Active Now panel in Home tab */
 .nowPlayingColumn-2sl4cE {
     display:none;
 }
-/* Completely Hide Blocked Messages */
+/*Disable Quick React Emojis*/
+.wrapper-3_530D {
+	display:none;
+}
+/*Adjust embed transparency*/
+embedWrapper-1MtIDg {
+    background-color:transparent;
+}
+/*Remove Invite Button next to channel name*/
+.actionIcon-2sw4Sl {
+    display: none;
+}
+/*Remove 'top emojis in server' type stuff*/
+#emoji-picker-tab-panel :is([class^=badgeLabel-], [class^=newlyAddedBadge]) {
+    display: none;
+}
+[class^=newlyAddedHighlight], [class^=newlyAddedHighlight]:hover {
+    border: none;
+}
+div[class*=contentWrapper] > #emoji-picker-tab-panel > div[class*=emojiPicker] > div[class*=bodyWrapper] > div#emoji-picker-grid > div[class*=listWrapper] > div[class*=scroller] > div[class*=listItems] > div:first-child > div[class*=wrapper] {
+    display: none;
+}
+/* Completely Hide Blocked Messages
+some of this is probably redundant but im lazy*/
 .groupStart-23k01U:not(.message-2qnXI6):not([style]) {
 	display:none;
 }
 .messageGroupBlocked-3wrQQX,[class^="blockedSystemMessage"],
 .messageGroupBlockedBtn-1PBBh- {
 	display: none !important
+}
+[class^="groupStart"] {
+    display: none;
 }
 /*Remove sticker reccommendations in message bar*/
 .container-JHR0NT {
@@ -110,13 +137,86 @@ button[aria-label="Open sticker picker"] {
 .divider-1bJsnZ {
 	display:none;
 }
-/*Fixes from BD Server~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* Remove buttons on message hover */
 .buttonContainer-DHceWr .buttons-cl5qTG {
 	display:none;
 }
 .buttons-3dF5Kd .wrapper-2vIMkT {
 	display:none;
+}
+/* Left column reorder */
+.panels-3wFtMD {
+  display: flex;
+  flex-direction: column;
+}
+.listeningAlong-6YvYsc {
+  order: 2;
+}
+.panel-2ZFCRb {
+  order: 1;
+}
+.wrapper-3Hk9OB{
+  order: 4;
+}
+#vc-spotify-player{
+  order: 3;
+}
+.container-YkUktl {
+  order: 5;
+}
+/* Hide various things to save vertical space */
+.panel-2ZFCRb {
+  display: none;
+}
+#vc-spotify-progress-bar {
+  display: none;
+}
+.vc-spotify-button-row {
+  display: none !important;
+}
+/* Hover transition on screenshare panel to save vertical space */ 
+.actionButtons-2vEOUh {
+  height: 0;
+  opacity: 0;
+  transition: height .2s, opacity .02s;
+  padding-top: 0px;
+}
+.connection-3k9QeF, .voiceUsers-3gPcwY {
+  padding-bottom: 0px;
+}
+.wrapper-3Hk9OB:hover .actionButtons-2vEOUh {
+  height: 32px;
+  opacity: 1;
+  padding-top: 4px;
+}
+.wrapper-3Hk9OB:hover .connection-3k9QeF, .voiceUsers-3gPcwY {
+  padding-bottom: 4px;
+}
+/*Search bar minimized until hover*/
+:root {
+  --transitionspeed: 0.25s;
+}
+.search-2Mwzzq:not(.open-1F8u2c) .searchBar-jGtisZ {
+  width: 27px;
+  transition: 0.25s;
+  background-color: transparent;
+}
+.search-2Mwzzq:not(.open-1F8u2c):hover .searchBar-jGtisZ {
+  width: 170px;
+  background-color: var(--background-tertiary);
+}
+.search-2Mwzzq:not(.open-1F8u2c) .iconContainer-1RqWJj {
+  transform: scale(1.3);
+  transition: 0.25s;
+}
+.search-2Mwzzq:not(.open-1F8u2c):hover .iconContainer-1RqWJj {
+  transform: scale(1);
+}
+.search-2Mwzzq:not(.open-1F8u2c) .icon-18rqoe {
+  color: var(--text-normal);
+}
+.search-2Mwzzq:not(.open-1F8u2c):hover .icon-18rqoe {
+  color: var(--text-muted);
 }
 /* Revert Reactions to ~2020 style*/
 .wrapper-3WhCwL,.mentioned-xhSam7 .mention{
@@ -166,61 +266,61 @@ button[aria-label="Open sticker picker"] {
 [class*="reaction-"][class*="reactionMe-"]:hover [class*="reactionCount-"]:not(#foo) {
     color:#7289da;
 }
-/*Adjust embed transparency*/
-embedWrapper-1MtIDg {
-    background-color:transparent;
-}
-
-/*Vencord Things~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* Left column reorder */
-.panels-3wFtMD {
+/*Attempts to alleviate my hatred of the mosaic picture stuff*/
+[class*="ByOneGrid-"]:not([class*="OneGridSingle-"]),
+[class*="ByTwoGrid-"],
+[class*="ByThreeGrid-"] {
   display: flex;
   flex-direction: column;
+  max-height: 100%;
 }
-.listeningAlong-6YvYsc {
-  order: 2;
+[class*="ByOneGrid-"]:not([class*="OneGridSingle-"]) [class*="lazyImg"],
+[class*="ByTwoGrid-"] [class*="lazyImg"],
+[class*="ByThreeGrid-"] [class*="lazyImg"] {
+  aspect-ratio: unset;
+  height: auto !important;
+  width: auto !important;
+  margin-left: 0px !important;
 }
-.panel-2ZFCRb {
-  order: 1;
+[class^="mediaAttachmentsContainer-"] [class*="messageAttachmentMediaMosaic-"] {
+  max-width: fit-content;
 }
-.wrapper-3Hk9OB{
-  order: 4;
+[class*="mediaAttachmentsContainer-"] {
+  border-radius: 0px;
 }
-#vc-spotify-player{
-  order: 3;
+[class*="OneGridSingle-"] {
+  border-radius: 3px;
 }
-.container-YkUktl {
-  order: 5;
+.lazyImg-ewiNCh, .originalLink-Azwuo9 {
+  min-width: auto !important;
 }
-/* Hide various things to save vertical space */
-.panel-2ZFCRb {
-  display: none;
+.mediaAttachmentsContainer-1WGRWy > div {
+  width: fit-content;
 }
-#vc-spotify-progress-bar {
-  display: none;
+.oneByTwoSoloItem-MZsImq {
+  flex: 0.5;
 }
-.vc-spotify-button-row {
-  display: none !important;
+.twoByOneGrid-3RBEQO {
+  flex-direction: row;
 }
-/* Hover transition on screenshare panel to save vertical space */ 
-.actionButtons-2vEOUh {
-  height: 0;
-  opacity: 0;
-  transition: height .2s, opacity .02s;
-  padding-top: 0px;
+.oneByTwoGrid-25mx0i {
+  align-items: flex-start;
 }
-.connection-3k9QeF, .voiceUsers-3gPcwY {
-  padding-bottom: 0px;
+.lazyImgContainer-3k3gRy, .mediaAttachmentsContainer-1WGRWy {
+  border-radius: 0 !important;
 }
-.wrapper-3Hk9OB:hover .actionButtons-2vEOUh {
-  height: 32px;
-  opacity: 1;
-  padding-top: 4px;
+.hoverButtonGroup-2yZIzC {
+  top: 0;
+  right: 0;
 }
-.wrapper-3Hk9OB:hover .connection-3k9QeF, .voiceUsers-3gPcwY {
-  padding-bottom: 4px;
+.hoverButton-36QWJk {
+  border-radius: 5px;
 }
-/*Remove Invite Button next to channel name*/
-.actionIcon-2sw4Sl {
-    display: none;
+/*Emoji Replacer
+.emoji[alt="EMOJIHERE"] {
+  content: url("LINKHERE");
 }
+/* hehe funny
+body {
+  transform: rotate(1deg);
+}*/
