@@ -51,9 +51,9 @@
 /*Adjust reaction size*/
 [id*=message-reactions] [class*=reaction-] .emoji,
 [class*=effect-] {
-  zoom: 150%;
+  zoom: 130%;
 }
-/*Remove Gift, Gif, Sticker Button  */
+/*Remove Gift, Gif, Sticker Buttons */
 button[aria-label="Send a gift"],
 button[aria-label="Open GIF picker"],
 button[aria-label="Open sticker picker"] {
@@ -61,15 +61,6 @@ button[aria-label="Open sticker picker"] {
 }
 /* Disable Nitro button in Home tab */
 [href="/store"] {
-    display:none;
-}
-/* Disable Stage button in Home tab */
-#private-channels 
-[href="/discovery"] {
-	display: none
-}
-/* Disable Active Now panel in Home tab */
-.nowPlayingColumn-2sl4cE {
     display:none;
 }
 /*Disable Quick React Emojis*/
@@ -91,7 +82,11 @@ embedWrapper-1MtIDg {
 [class^=newlyAddedHighlight], [class^=newlyAddedHighlight]:hover {
     border: none;
 }
-div[class*=contentWrapper] > #emoji-picker-tab-panel > div[class*=emojiPicker] > div[class*=bodyWrapper] > div#emoji-picker-grid > div[class*=listWrapper] > div[class*=scroller] > div[class*=listItems] > div:first-child > div[class*=wrapper] {
+div[class*=contentWrapper] > #emoji-picker-tab-panel > 
+div[class*=emojiPicker] > div[class*=bodyWrapper] > 
+div#emoji-picker-grid > div[class*=listWrapper] > 
+div[class*=scroller] > div[class*=listItems] > 
+div:first-child > div[class*=wrapper] {
     display: none;
 }
 /* Completely Hide Blocked Messages
@@ -100,30 +95,21 @@ some of this is probably redundant but im lazy*/
 	display:none;
 }
 .messageGroupBlocked-3wrQQX,[class^="blockedSystemMessage"],
-.messageGroupBlockedBtn-1PBBh- {
+.messageGroupBlockedBtn-1PBBh-,[class^="groupStart"] {
 	display: none !important
 }
-[class^="groupStart"] {
-    display: none;
-}
 /*Remove sticker reccommendations in message bar*/
-.container-JHR0NT {
+.container-JHR0NT,
+.stickersHeaderWithEmojiResults-1b7pYC,
+.divider-1bJsnZ {
     display:none;
-}
-.stickersHeaderWithEmojiResults-1b7pYC {
-	display:none;
 }
 [id="textarea-context-sticker-suggestions"],[id="autocomplete-6"],
 [id="autocomplete-7"],[id="autocomplete-8"],[id="autocomplete-9"] {
   display: none;
 }
-.divider-1bJsnZ {
-	display:none;
-}
 /* Remove buttons on message hover */
-.buttonContainer-DHceWr .buttons-cl5qTG {
-	display:none;
-}
+.buttonContainer-DHceWr .buttons-cl5qTG,
 .buttons-3dF5Kd .wrapper-2vIMkT {
 	display:none;
 }
@@ -148,14 +134,10 @@ some of this is probably redundant but im lazy*/
   order: 5;
 }
 /* Hide various things to save vertical space */
-.panel-2ZFCRb {
-  display: none;
-}
-#vc-spotify-progress-bar {
-  display: none;
-}
+.panel-2ZFCRb,
+#vc-spotify-progress-bar,
 .vc-spotify-button-row {
-  display: none !important;
+  display: none;
 }
 /* Hover transition on screenshare panel to save vertical space */ 
 .actionButtons-2vEOUh {
