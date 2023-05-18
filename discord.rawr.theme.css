@@ -53,15 +53,9 @@
 [class*=effect-] {
   zoom: 150%;
 }
-/*Remove Gift Button  */
-button[aria-label="Send a gift"] {
-  display: none;
-}
-/*Remove Gif Button  */
-button[aria-label="Open GIF picker"] {
-  display: none;
-}
-/*Remove Sticker Button  */
+/*Remove Gift, Gif, Sticker Button  */
+button[aria-label="Send a gift"],
+button[aria-label="Open GIF picker"],
 button[aria-label="Open sticker picker"] {
   display: none;
 }
@@ -119,19 +113,8 @@ some of this is probably redundant but im lazy*/
 .stickersHeaderWithEmojiResults-1b7pYC {
 	display:none;
 }
-[id="textarea-context-sticker-suggestions"] {
-  display: none;
-}
-[id="autocomplete-6"] {
-  display: none;
-}
-[id="autocomplete-7"] {
-  display: none;
-}
-[id="autocomplete-8"] {
-  display: none;
-}
-[id="autocomplete-9"] {
+[id="textarea-context-sticker-suggestions"],[id="autocomplete-6"],
+[id="autocomplete-7"],[id="autocomplete-8"],[id="autocomplete-9"] {
   display: none;
 }
 .divider-1bJsnZ {
@@ -315,6 +298,24 @@ some of this is probably redundant but im lazy*/
 }
 .hoverButton-36QWJk {
   border-radius: 5px;
+}
+/*Hides things when right clicking settings button*/
+[id="user-settings-cog-My_Account"],[id="user-settings-cog-Profile_Customization"],
+[id="user-settings-cog-Privacy___Safety"],[id="user-settings-cog-Authorized_Apps"],
+[id="user-settings-cog-Sessions"],[id="user-settings-cog-Connections"],
+[id="user-settings-cog-Friend_Requests"],[id="user-settings-cog-Discord_Nitro"],
+[id="user-settings-cog-Nitro_Server_Boost"],[id="user-settings-cog-Subscriptions"],
+[id="user-settings-cog-Library_Inventory"],[id="user-settings-cog-Billing"],
+[id="user-settings-cog-Appearance"],[id="user-settings-cog-Accessibility"],
+[id="user-settings-cog-Text___Images"],[id="user-settings-cog-Notifications"],
+[id="user-settings-cog-Keybinds"],[id="user-settings-cog-Language"],
+[id="user-settings-cog-Windows"],[id="user-settings-cog-Streamer_Mode"],
+[id="user-settings-cog-Advanced"],[id="user-settings-cog-"],
+[id="user-settings-cog-VencordSettings"],[id="user-settings-cog-VencordCloud"],
+[id="user-settings-cog-VencordSettingsSync"],[id="user-settings-cog-Activity_Privacy"],
+[id="user-settings-cog-Game_Activity"],[id="user-settings-cog-Overlay"],
+[id="user-settings-cog-changelog"],[id="user-settings-cog-Hypesquad_Online"] {
+  display: none;
 }
 /*Emoji Replacer
 .emoji[alt="EMOJIHERE"] {
